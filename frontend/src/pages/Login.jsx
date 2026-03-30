@@ -65,7 +65,7 @@ const Login = () => {
         <div className="bg-amber-600 h-full w-full">
           <img
             className="w-full h-full object-cover"
-            src="/src/main.jpg"
+            src="../src/main.jpg"
             alt="Pemandangan Desa"
           />
         </div>

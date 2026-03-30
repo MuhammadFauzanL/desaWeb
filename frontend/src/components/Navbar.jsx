@@ -49,7 +49,7 @@ const Navbar = () => {
       : "hover:text-emerald-600";
 
   return (
-    <header className="flex items-center justify-between md:px-[8vw] px-[3vw] bg-white h-14 text-black shadow-sm fixed top-0 left-0 w-full z-50">
+    <header className="flex items-center justify-between md:px-[8vw] px-[3vw] bg-white h-14 text-black shadow-sm fixed top-0 left-0 w-full z-[9999]">
       <div className="logo">
         <Link to="/" className="flex items-center gap-1">
           <img

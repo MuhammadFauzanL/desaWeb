@@ -24,9 +24,9 @@ const Home = () => {
         <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 max-w-3xl font-sans w-full md:w-2/3">
           <div className="flex items-start gap-5">
             <img
-              src="/src/main.jpg"
-              alt="Foto Desa"
-              className="w-24 h-24 rounded-lg object-cover"
+              src="https://img.icons8.com/pastel-glyph/96/0f766e/village--v1.png"
+              alt="Icon Desa"
+              className="w-24 h-24 rounded-lg object-contain bg-emerald-50 p-2"
             />
             <div className="pt-2">
               <h2 className="text-3xl font-bold text-teal-700">
