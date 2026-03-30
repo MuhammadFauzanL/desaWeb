@@ -34,7 +34,8 @@ const Login = () => {
         navigate(data.user && data.user.role === "admin" ? "/admin" : "/");
       }, 1500);
     } catch (error) {
-      showMessage("error", error.message || "Login gagal.");
+      const errorMsg = error.errors ? error.errors[0].msg : error.message || "Login gagal.";
+      showMessage("error", errorMsg);
     }
   };
 
@@ -50,7 +51,8 @@ const Login = () => {
         setMessage("");
       }, 1500);
     } catch (error) {
-      showMessage("error", error.message || "Registrasi gagal.");
+      const errorMsg = error.errors ? error.errors[0].msg : error.message || "Registrasi gagal.";
+      showMessage("error", errorMsg);
     }
   };
 
@@ -65,7 +67,7 @@ const Login = () => {
         <div className="bg-amber-600 h-full w-full">
           <img
             className="w-full h-full object-cover"
-            src="../src/main.jpg"
+            src="/src/main.jpg"
             alt="Pemandangan Desa"
           />
         </div>
