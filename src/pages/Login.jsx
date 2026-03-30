@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api/auth";
 import { registerUser } from "../api/users";
+import mainImg from "../main.jpg";
 
 const Login = () => {
   const [mode, setMode] = useState("login");
@@ -67,7 +68,7 @@ const Login = () => {
         <div className="bg-amber-600 h-full w-full">
           <img
             className="w-full h-full object-cover"
-            src="/src/main.jpg"
+            src={mainImg}
             alt="Pemandangan Desa"
           />
         </div>
