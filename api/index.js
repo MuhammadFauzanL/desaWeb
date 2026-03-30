@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
-const connectDB = require("../backend/config/db");
+const connectDB = require("./_backend/config/db");
 
 // ✅ Muat .env (di root)
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
@@ -21,18 +21,18 @@ app.use((req, res, next) => {
 });
 
 // Sajikan folder public statis (tergantung kebutuhan)
-app.use(express.static(path.join(__dirname, "../backend/public")));
+app.use(express.static(path.join(__dirname, "./_backend/public")));
 
 // Cek Health
 app.get("/api/health", (req, res) => res.send("API Desa Cibiru Berjalan... (Monorepo)"));
 
 // Register Routes
-app.use("/api/users", require("../backend/routes/users"));
-app.use("/api/auth", require("../backend/routes/auth"));
-app.use("/api/berita", require("../backend/routes/berita"));
-app.use("/api/profil", require("../backend/routes/profile"));
-app.use("/api/aspirasi", require("../backend/routes/aspirasi"));
-app.use("/api/peminjaman", require("../backend/routes/peminjaman"));
+app.use("/api/users", require("./_backend/routes/users"));
+app.use("/api/auth", require("./_backend/routes/auth"));
+app.use("/api/berita", require("./_backend/routes/berita"));
+app.use("/api/profil", require("./_backend/routes/profile"));
+app.use("/api/aspirasi", require("./_backend/routes/aspirasi"));
+app.use("/api/peminjaman", require("./_backend/routes/peminjaman"));
 
 // Global Error Handler
 app.use((err, req, res, next) => {
