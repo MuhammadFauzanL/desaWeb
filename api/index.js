@@ -7,17 +7,20 @@ const connectDB = require("./_backend/config/db");
 // ✅ Muat .env (di root)
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-// Hubungkan ke DB
-connectDB();
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Logger sederhana
-app.use((req, res, next) => {
+// Middleware: Hubungkan otomatis dari Serverless ke MongoDB dan Logger
+app.use(async (req, res, next) => {
   console.log(`➡️ ${req.method} ${req.url}`);
-  next();
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    // Jika koneksi gagal, langsung gagal jangan dibiarkan gantung!
+    next(error); 
+  }
 });
 
 // Sajikan folder public statis (tergantung kebutuhan)
